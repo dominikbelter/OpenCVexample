@@ -16,7 +16,7 @@ int main()
 {
     try {
         cv::Mat image;
-        image = cv::imread("../../resources/messor2.jpg", CV_LOAD_IMAGE_COLOR);
+        image = cv::imread("../../resources/messor2.jpg", cv::IMREAD_COLOR);
         imshow("image", image);
 
         cv::GaussianBlur( image, image, cv::Size( 21, 21 ), 5, 5 );
@@ -25,7 +25,7 @@ int main()
 
         cv::Mat gray;
         /// Convert the image to grayscale
-        cv::cvtColor( image, gray, CV_BGR2GRAY );
+        cv::cvtColor( image, gray, cv::COLOR_BGR2GRAY );
 
         cv::namedWindow( "Gray", cv::WINDOW_AUTOSIZE );// Create a window for display.
         cv::imshow( "Gray", gray );
